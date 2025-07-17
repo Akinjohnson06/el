@@ -32,7 +32,7 @@ model, preprocessor, column_info, unique_values = load_artifacts()
 
 # Define all possible values for each feature
 FEATURE_VALUES = {
-    "Year": [2021, 2022, 2023],
+    "Year": [2021, 2022, 2023, 2024, 2025, 2026],
     "County": ['Sacramento', 'Amador', 'Placer', 'El Dorado', 'San Joaquin', 'Calaveras',
                'Stanislaus', 'Yolo', 'Tuolumne', 'Fresno', 'Merced', 'Madera',
                'San Luis Obispo', 'Ventura', 'Santa Barbara', 'Orange', 'Los Angeles',
