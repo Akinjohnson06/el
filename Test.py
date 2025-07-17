@@ -17,13 +17,13 @@ import joblib
 # Load dataset
 @st.cache_data
 def load_data():
-    df_2021 = pd.read_csv("ca_ssi_adult_odp_2021.csv")
+    df_2021 = pd.read_csv(r"C:\Users\AKIN-JOHNSON\Desktop\Workspace\TDI\Stage 2\ca_ssi_adult_odp_2021.csv")
     df_2021["Year"] = 2021
 
-    df_2022 = pd.read_csv("ca_ssi_adult_odp_2022.csv")
+    df_2022 = pd.read_csv(r"C:\Users\AKIN-JOHNSON\Desktop\Workspace\TDI\Stage 2\ca_ssi_adult_odp_2022.csv")
     df_2022["Year"] = 2022
 
-    df_2023 = pd.read_csv("ca_ssi_adult_odp_2023.csv")
+    df_2023 = pd.read_csv(r"C:\Users\AKIN-JOHNSON\Desktop\Workspace\TDI\Stage 2\ca_ssi_adult_odp_2023.csv")
     df_2023["Year"] = 2023
 
     df = pd.concat([df_2021, df_2022, df_2023])
@@ -236,22 +236,16 @@ elif page == "🤖 Train & Predict":
 
     # Load pre-trained artifacts
     try:
-        model = joblib.load("ssi_xgb_model.joblib")
-        preprocessor = joblib.load("ssi_preprocessor.joblib")
-        column_info = joblib.load("ssi_columns.joblib")
-        unique_values = joblib.load("ssi_unique_values.joblib")
+        model = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_xgb_model.joblib")
+        preprocessor = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_preprocessor.joblib")
+        column_info = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_columns.joblib")
+        unique_values = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_unique_values.joblib")
     except FileNotFoundError as e:
         st.error(f"❌ Required model files not found: {e}")
         st.stop()
 
     df = preprocess_data(load_data())
-    
-    # Ensure we have all expected columns
-    missing_cols = [col for col in column_info['all_columns'] if col not in df.columns]
-    if missing_cols:
-        st.error(f"❌ Missing columns in data: {missing_cols}")
-        st.stop()
-        
+
     st.write("### Enter Input Features to Predict SIR")
 
     input_data = {}
