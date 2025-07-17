@@ -19,11 +19,11 @@ st.set_page_config(
 @st.cache_resource
 def load_artifacts():
     try:
-        model = joblib.load("ssi_xgb_model.joblib")
-        preprocessor = joblib.load("ssi_preprocessor.joblib")
-        column_info = joblib.load("ssi_columns.joblib")
-        unique_values = joblib.load("ssi_unique_values.joblib")
-        return model, preprocessor, column_info, unique_values
+       model = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_xgb_model.joblib")
+       preprocessor = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_preprocessor.joblib")
+       column_info = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_columns.joblib")
+       unique_values = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_unique_values.joblib")
+       return model, preprocessor, column_info, unique_values
     except FileNotFoundError as e:
         st.error(f"Required model files not found: {e}")
         st.stop()
