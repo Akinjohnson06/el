@@ -28,7 +28,7 @@ def load_data():
 
     df = pd.concat([df_2021, df_2022, df_2023])
     df.columns = df.columns.str.strip().str.replace(" ", "_")
-    return df
+    return df.reset_index()
 
 
 def preprocess_data(df):
