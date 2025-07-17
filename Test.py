@@ -17,13 +17,13 @@ import joblib
 # Load dataset
 @st.cache_data
 def load_data():
-    df_2021 = pd.read_csv(r"C:\Users\AKIN-JOHNSON\Desktop\Workspace\TDI\Stage 2\ca_ssi_adult_odp_2021.csv")
+    df_2021 = pd.read_csv("ca_ssi_adult_odp_2021.csv")
     df_2021["Year"] = 2021
 
-    df_2022 = pd.read_csv(r"C:\Users\AKIN-JOHNSON\Desktop\Workspace\TDI\Stage 2\ca_ssi_adult_odp_2022.csv")
+    df_2022 = pd.read_csv("ca_ssi_adult_odp_2022.csv")
     df_2022["Year"] = 2022
 
-    df_2023 = pd.read_csv(r"C:\Users\AKIN-JOHNSON\Desktop\Workspace\TDI\Stage 2\ca_ssi_adult_odp_2023.csv")
+    df_2023 = pd.read_csv("ca_ssi_adult_odp_2023.csv")
     df_2023["Year"] = 2023
 
     df = pd.concat([df_2021, df_2022, df_2023])
