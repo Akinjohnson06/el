@@ -245,7 +245,13 @@ elif page == "🤖 Train & Predict":
         st.stop()
 
     df = preprocess_data(load_data())
-
+    
+    # Ensure we have all expected columns
+    missing_cols = [col for col in column_info['all_columns'] if col not in df.columns]
+    if missing_cols:
+        st.error(f"❌ Missing columns in data: {missing_cols}")
+        st.stop()
+        
     st.write("### Enter Input Features to Predict SIR")
 
     input_data = {}
