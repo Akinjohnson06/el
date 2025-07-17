@@ -481,7 +481,7 @@ def data_explorer_page():
 
 # Train & Evaluation Page
 def train_eval_page():
-    st.title("🤖 Train & Evaluate Model")
+    st.title("🧠 Train & Evaluate Model")
     
     # Model information
     st.markdown("""
@@ -770,7 +770,7 @@ def main():
         "📋 About", 
         "👤 Profile", 
         "📊 Data Explorer", 
-        "🤖 Train & Evaluate",
+        "🧠 Train & Evaluate",
         "🔮 Predict SIR",
         "📋 Report"
     ])
@@ -782,7 +782,7 @@ def main():
         profile_page()
     elif page == "📊 Data Explorer":
         data_explorer_page()
-    elif page == "🤖 Train & Evaluate":
+    elif page == "🧠 Train & Evaluate":
         train_eval_page()
     elif page == "🔮 Predict SIR":
         prediction_page()
