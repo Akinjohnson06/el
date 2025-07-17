@@ -236,10 +236,10 @@ elif page == "🤖 Train & Predict":
 
     # Load pre-trained artifacts
     try:
-        model = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_xgb_model.joblib")
-        preprocessor = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_preprocessor.joblib")
-        column_info = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_columns.joblib")
-        unique_values = joblib.load("C:/Users/AKIN-JOHNSON/Desktop/Workspace/TDI/Stage 2/ssi_unique_values.joblib")
+        model = joblib.load("ssi_xgb_model.joblib")
+        preprocessor = joblib.load("ssi_preprocessor.joblib")
+        column_info = joblib.load("ssi_columns.joblib")
+        unique_values = joblib.load("ssi_unique_values.joblib")
     except FileNotFoundError as e:
         st.error(f"❌ Required model files not found: {e}")
         st.stop()
